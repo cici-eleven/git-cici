@@ -1,0 +1,1369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>网易严选</title>
+	<style type="text/css">
+		html{
+			color: #333;
+			font:normal 12px "微软雅黑","Microsoft YaHei",serif;
+		}
+		body,p{
+			margin: 0;
+		}
+		ul{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		a{
+			color: #ededed;
+			text-decoration: none;
+		}
+		/*顶部样式设置*/
+		.top{
+			background-color: #333;
+			color: #ededed;
+		}
+		.wrapper{
+			width: 1200px;
+			margin: 0 auto;
+		}
+		.top .wrapper{
+			line-height: 3em;
+		}
+		.top .wrapper::after{
+			display: block;
+			content: "";
+			clear: both;
+		}
+		.top .left{
+			float: left;
+		}
+
+		.top .right{
+			float: right;
+		}
+		.right>ul::after{
+			display: block;
+			content: "";
+			clear: both;
+		}
+		.right>ul>li{
+			float: left;
+		}
+		ul>li>a{
+			padding: 0 1em;
+			border-right: 1px solid #ededed;
+		}
+		/*header样式设置*/
+		.header>.wrapper{
+			background-color: #b4a078;
+		}
+		.header .left{
+			width: 150px;
+			height: 100px;
+			background-color: #ededed;
+			float: left;
+		}
+		.header .right{
+			width: 800px;
+			height: 100px;
+			margin-left: 400px;
+			background-color: #ededed;
+		}
+	 /*	.header .right::after{
+			display: block;
+			content: "";
+			clear: both;
+		} */
+		.right>.search{
+			width:600px;
+			height:80px;
+			background-color: #ffffff;
+			float: left;
+			margin-top: 10px;
+		}
+		.right>.buy{
+			width: 150px;
+			height: 80px;
+			background-color: #ffffff;
+			float: right;
+			margin-top: 10px;
+		}
+		/*导航栏样式*/
+		.nav{
+			height: 2em;
+		}
+		.nav .wrapper ul>li{
+			float: left;
+			font-size: 14px;
+			padding: 0 2em;
+		}
+		/*宣传图样式*/
+		.xct{
+			width: 100%;
+			height: 400px;
+			background-color: #b4a078;
+		}
+		/*品牌制造*/
+		.ppmade .wrapper{
+			height: 450px;
+			background-color: #ffffff;
+		}
+		.ppmade .top{
+			height: 100px;
+			background-color: #ffffff;
+			color: #333;
+		}
+		.ppmade .top>ul>li:first-child{
+			float: left;
+			/*padding: 0 1.5em;*/
+			
+		}
+		.ppmade .top>ul>li:last-child{
+			float: right;
+			margin-top: 60px;
+		}
+		.ppmade .top>ul>li:first-child>p:nth-of-type(1){
+			font-size: 24px;
+			float: left;
+			margin-top: 50px;
+		}
+		.ppmade .top>ul>li:first-child>p:nth-of-type(2){
+			float: right;
+			margin-left: 20px;
+			margin-top: 60px;
+		}
+		.ppmade .buttom{
+			background-color: #ededed;
+			height: 350px;
+		}
+		.ppmade .buttom li:nth-child(1),.ppmade .buttom li:nth-child(2){
+			width: 390px;
+			height: 330px;
+			margin-top: 10px;
+			background-color: #ffffff;
+			float: left;
+			margin-left: 10px;
+		}
+	/*	.ppmade .buttom li:nth-child(2)::after{
+			display: block;
+			content: "";
+			clear: both;
+		}*/
+		.ppmade .buttom li:nth-child(3),.ppmade .buttom li:nth-child(4){
+			width: 380px;
+			height: 160px;
+			background-color: #ffffff;
+			margin-top: 10px;
+			margin-left: 10px;
+			float: left;
+		}
+
+		/*新品首发样式*/
+		.xpshow .wrapper{
+			height: 450px;
+			background-color: #ffffff;
+		}
+		.xpshow .top{
+			height: 100px;
+			background-color: #ffffff;
+			color: #333;
+		}
+		.xpshow .top>ul>li:first-child{
+			float: left;
+			/*padding: 0 1.5em;*/
+			
+		}
+		.xpshow .top>ul>li:last-child{
+			float: right;
+			margin-top: 60px;
+		}
+		.xpshow .top>ul>li:first-child>p:nth-of-type(1){
+			font-size: 24px;
+			float: left;
+			margin-top: 50px;
+		}
+		.xpshow .top>ul>li:first-child>p:nth-of-type(2){
+			float: right;
+			margin-left: 20px;
+			margin-top: 60px;
+		}
+		.xpshow .buttom{
+			background-color: #ededed;
+			height: 350px;
+		}
+		.xpshow .buttom ul>li{
+			width: 287.5px;
+			height: 330px;
+			background-color: #ffffff;
+			margin-left: 10px;
+			margin-top: 10px;
+			float: left;
+		}
+
+		/*人气推荐样式*/
+		.popular .wrapper{
+			height: 630px;
+			background-color: #ffffff;
+		}
+		.popular .top{
+			height: 100px;
+			background-color: #ffffff;
+			color: #333;
+		}
+		.popular .top>ul>li:first-child{
+			float: left;
+			/*padding: 0 1.5em;*/
+			
+		}
+		.popular .top>ul>li:last-child{
+			float: right;
+			margin-top: 60px;
+		}
+		.popular .top>ul>li:first-child>p:nth-of-type(1){
+			float: left;
+			font-size: 24px;
+			margin-top: 50px;
+		}
+		.popular .top>ul>li:first-child>p:nth-of-type(2),.popular .top>ul>li:first-child>p:nth-of-type(3){
+			float: left;
+			margin-left: 20px;
+			margin-top: 60px;
+		}
+		.popular .buttom{
+			background-color: #ededed;
+			height: 530px;
+		}
+		.popular .pic>li{
+			float: left;
+		}
+		.popular .pic>li:nth-child(1)>div:first-child{
+			width: 400px;
+			height: 398px;
+			border-bottom: 2px solid #ededed;
+			background-color: #ffffff;
+			margin-left: 10px;
+		}
+		.popular .pic>li:nth-child(1)>div:last-child{
+			width: 400px;
+			height: 130px;
+			background-color: #ffffff;
+			margin-left: 10px;
+		}
+		.popular .pic>li:nth-child(2)>div:first-child{
+			width: 250px;
+			height: 179px;
+			border-bottom: 1px solid #ededed;
+			background-color: #ffffff;
+			margin-left: 10px;
+		}
+		.popular .pic>li:nth-child(2)>div:last-child{
+			width: 250px;
+			height: 80px;
+			background-color: #ffffff;
+			margin-left: 10px;
+		}
+		.popular .pic>li:nth-child(3)>div:first-child{
+			width: 250px;
+			height: 179px;
+			border-bottom: 1px solid #ededed;
+			background-color: #ffffff;
+			margin-left: 10px;
+		}
+		.popular .pic>li:nth-child(3)>div:last-child{
+			width: 250px;
+			height: 80px;
+			background-color: #ffffff;
+			margin-left: 10px;
+
+		}
+		.popular .pic>li:nth-child(4)>div:first-child{
+			width: 250px;
+			height: 179px;
+			border-bottom: 1px solid #ededed;
+			background-color: #ffffff;
+			margin-left: 10px;
+		}
+		.popular .pic>li:nth-child(4)>div:last-child{
+			width: 250px;
+			height: 80px;
+			background-color: #ffffff;
+			margin-left: 10px;
+		}
+		.popular .pic>li:nth-child(5)>div:first-child{
+			width: 250px;
+			height: 179px;
+			border-bottom: 1px solid #ededed;
+			background-color: #ffffff;
+			margin-left: 10px;
+			margin-top: 10px;
+		}
+		.popular .pic>li:nth-child(5)>div:last-child{
+			width: 250px;
+			height: 80px;
+			background-color: #ffffff;
+			margin-left: 10px;
+		}
+		.popular .pic>li:nth-child(6)>div:first-child{
+			width: 250px;
+			height: 179px;
+			border-bottom: 1px solid #ededed;
+			background-color: #ffffff;
+			margin-left: 10px;
+			margin-top: 10px;
+		}
+		.popular .pic>li:nth-child(6)>div:last-child{
+			width: 250px;
+			height: 80px;
+			background-color: #ffffff;
+			margin-left: 10px;
+		}
+		.popular .pic>li:nth-child(7)>div:first-child{
+			width: 250px;
+			height: 179px;
+			border-bottom: 1px solid #ededed;
+			background-color: #ffffff;
+			margin-left: 10px;
+			margin-top: 10px;
+		}
+		.popular .pic>li:nth-child(7)>div:last-child{
+			width: 250px;
+			height: 80px;
+			background-color: #ffffff;
+			margin-left: 10px;
+		}
+		/*福利社*/
+		.fl .wrapper{
+			height: 500px;
+			background-color: #ededed;
+		}
+		.fl .top{
+			height: 100px;
+			background-color: #ffffff;
+			color: #333;
+		}
+		.fl .top>ul>li:first-child{
+			font-size: 24px;
+			margin-top: 50px;
+			float: left;
+		}
+		.fl .top>ul>li:last-child{
+			margin-top: 60px;
+			float: right;
+		}
+		.fl .buttom>ul>li{
+			float: left;
+		}
+		.fl .buttom>ul>li:nth-child(1){
+			width: 298px;
+			height: 380px;
+			background-color: #ffffff;
+			border-right: 2px solid #ededed;
+			margin-top: 10px;
+		}
+		.fl .buttom>ul>li:nth-child(2){
+			width: 598px;
+			height: 380px;
+			background-color: #ffffff;
+			border-right: 2px solid #ededed;
+			margin-top: 10px;
+		}
+		.fl .buttom>ul>li:nth-child(3){
+			width: 298px;
+			height: 380px;
+			background-color: #ffffff;
+			border-right: 2px solid #ededed;
+			margin-top: 10px;
+		}
+		/*居家生活*/
+		.jjlive .wrapper{
+			height: 800px;
+			background-color: #ededed;
+		}
+		.jjlive .top{
+			height: 100px;
+			background-color: #ffffff;
+			color: #333;
+		}
+		.jjlive .top>ul>li:first-child{
+			/*list-style: none;*/
+			font-size: 24px;
+			margin-top: 50px;
+			float: left;
+		}
+		.jjlive .top>ul>li:last-child{
+			float: right;
+		}
+		.jjlive .top>ul>li>ul>li{
+			padding: 0 2em;
+			margin-top: 60px;
+			float: left;
+		}
+		.jjlive .buttom{
+			height: 700px;
+			/*background-color: #ffffff;*/
+		}
+		.jjlive .buttom>ul>li:nth-child(1){
+			width: 1200px;
+			height: 300px;
+			background-color: #ffffff;
+			border: 1px solid #ededed;
+		}
+		.jjlive .buttom>ul>li:nth-child(2),.jjlive .buttom>ul>li:nth-child(3),.jjlive .buttom>ul>li:nth-child(4),.jjlive .buttom>ul>li:nth-child(5){
+			width: 292.5px;
+			height: 380px;
+			margin-top: 20px;
+			margin-left: 5px;
+			background-color: #ffffff;
+			float: left;
+		}
+		/*服饰鞋包*/
+		.shoes .wrapper{
+			height: 800px;
+			background-color: #ededed;
+		}
+		.shoes .top{
+			height: 100px;
+			background-color: #ffffff;
+			color: #333;
+		}
+		.shoes .top>ul>li:first-child{
+			/*list-style: none;*/
+			font-size: 24px;
+			margin-top: 50px;
+			float: left;
+		}
+		.shoes .top>ul>li:last-child{
+			float: right;
+		}
+		.shoes .top>ul>li>ul>li{
+			padding: 0 2em;
+			margin-top: 60px;
+			float: left;
+		}
+		.shoes .buttom{
+			height: 700px;
+			/*background-color: #ffffff;*/
+		}
+		.shoes .buttom>ul>li:nth-child(1){
+			width: 1200px;
+			height: 300px;
+			background-color: #ffffff;
+			border: 1px solid #ededed;
+		}
+		.shoes .buttom>ul>li:nth-child(2),.shoes .buttom>ul>li:nth-child(3),.shoes .buttom>ul>li:nth-child(4),.shoes .buttom>ul>li:nth-child(5){
+			width: 292.5px;
+			height: 380px;
+			margin-top: 20px;
+			margin-left: 5px;
+			background-color: #ffffff;
+			float: left;
+		}
+		/*美食酒水*/
+		.food .wrapper{
+			height: 800px;
+			background-color: #ededed;
+		}
+		.food .top{
+			height: 100px;
+			background-color: #ffffff;
+			color: #333;
+		}
+		.food .top>ul>li:first-child{
+			/*list-style: none;*/
+			font-size: 24px;
+			margin-top: 50px;
+			float: left;
+		}
+		.food .top>ul>li:last-child{
+			float: right;
+		}
+		.food .top>ul>li>ul>li{
+			padding: 0 2em;
+			margin-top: 60px;
+			float: left;
+		}
+		.food .buttom{
+			height: 700px;
+			/*background-color: #ffffff;*/
+		}
+		.food .buttom>ul>li:nth-child(1){
+			width: 1200px;
+			height: 300px;
+			background-color: #ffffff;
+			border: 1px solid #ededed;
+		}
+		.food .buttom>ul>li:nth-child(2),.food .buttom>ul>li:nth-child(3),.food .buttom>ul>li:nth-child(4),.food .buttom>ul>li:nth-child(5){
+			width: 292.5px;
+			height: 380px;
+			margin-top: 20px;
+			margin-left: 5px;
+			background-color: #ffffff;
+			float: left;
+		}
+		/*个护清洁*/
+		.clear .wrapper{
+			height: 800px;
+			background-color: #ededed;
+		}
+		.clear .top{
+			height: 100px;
+			background-color: #ffffff;
+			color: #333;
+		}
+		.clear .top>ul>li:first-child{
+			/*list-style: none;*/
+			font-size: 24px;
+			margin-top: 50px;
+			float: left;
+		}
+		.clear .top>ul>li:last-child{
+			float: right;
+		}
+		.clear .top>ul>li>ul>li{
+			padding: 0 2em;
+			margin-top: 60px;
+			float: left;
+		}
+		.clear .buttom{
+			height: 700px;
+			/*background-color: #ffffff;*/
+		}
+		.clear .buttom>ul>li:nth-child(1){
+			width: 1200px;
+			height: 300px;
+			background-color: #ffffff;
+			border: 1px solid #ededed;
+		}
+		.clear .buttom>ul>li:nth-child(2),.clear .buttom>ul>li:nth-child(3),.clear .buttom>ul>li:nth-child(4),.clear .buttom>ul>li:nth-child(5){
+			width: 292.5px;
+			height: 380px;
+			margin-top: 20px;
+			margin-left: 5px;
+			background-color: #ffffff;
+			float: left;
+		}
+		/*母婴亲子*/
+		.baby .wrapper{
+			height: 800px;
+			background-color: #ededed;
+		}
+		.baby .top{
+			height: 100px;
+			background-color: #ffffff;
+			color: #333;
+		}
+		.baby .top>ul>li:first-child{
+			/*list-style: none;*/
+			font-size: 24px;
+			margin-top: 50px;
+			float: left;
+		}
+		.baby .top>ul>li:last-child{
+			float: right;
+		}
+		.baby .top>ul>li>ul>li{
+			padding: 0 2em;
+			margin-top: 60px;
+			float: left;
+		}
+		.baby .buttom{
+			height: 700px;
+			/*background-color: #ffffff;*/
+		}
+		.baby .buttom>ul>li:nth-child(1){
+			width: 1200px;
+			height: 300px;
+			background-color: #ffffff;
+			border: 1px solid #ededed;
+		}
+		.baby .buttom>ul>li:nth-child(2),.baby .buttom>ul>li:nth-child(3),.baby .buttom>ul>li:nth-child(4),.baby .buttom>ul>li:nth-child(5){
+			width: 292.5px;
+			height: 380px;
+			margin-top: 20px;
+			margin-left: 5px;
+			background-color: #ffffff;
+			float: left;
+		}
+		/*运动旅行*/
+		.sport .wrapper{
+			height: 800px;
+			background-color: #ededed;
+		}
+		.sport .top{
+			height: 100px;
+			background-color: #ffffff;
+			color: #333;
+		}
+		.sport .top>ul>li:first-child{
+			/*list-style: none;*/
+			font-size: 24px;
+			margin-top: 50px;
+			float: left;
+		}
+		.sport .top>ul>li:last-child{
+			float: right;
+		}
+		.sport .top>ul>li>ul>li{
+			padding: 0 2em;
+			margin-top: 60px;
+			float: left;
+		}
+		.sport .buttom{
+			height: 700px;
+			/*background-color: #ffffff;*/
+		}
+		.sport .buttom>ul>li:nth-child(1){
+			width: 1200px;
+			height: 300px;
+			background-color: #ffffff;
+			border: 1px solid #ededed;
+		}
+		.sport .buttom>ul>li:nth-child(2),.sport .buttom>ul>li:nth-child(3),.sport .buttom>ul>li:nth-child(4),.sport .buttom>ul>li:nth-child(5){
+			width: 292.5px;
+			height: 380px;
+			margin-top: 20px;
+			margin-left: 5px;
+			background-color: #ffffff;
+			float: left;
+		}
+		/*数码家电*/
+		.smjd .wrapper{
+			height: 800px;
+			background-color: #ededed;
+		}
+		.smjd .top{
+			height: 100px;
+			background-color: #ffffff;
+			color: #333;
+		}
+		.smjd .top>ul>li:first-child{
+			/*list-style: none;*/
+			font-size: 24px;
+			margin-top: 50px;
+			float: left;
+		}
+		.smjd .top>ul>li:last-child{
+			float: right;
+		}
+		.smjd .top>ul>li>ul>li{
+			padding: 0 2em;
+			margin-top: 60px;
+			float: left;
+		}
+		.smjd .buttom{
+			height: 700px;
+			/*background-color: #ffffff;*/
+		}
+		.smjd .buttom>ul>li:nth-child(1){
+			width: 1200px;
+			height: 300px;
+			background-color: #ffffff;
+			border: 1px solid #ededed;
+		}
+		.smjd .buttom>ul>li:nth-child(2),.smjd .buttom>ul>li:nth-child(3),.smjd .buttom>ul>li:nth-child(4),.smjd .buttom>ul>li:nth-child(5){
+			width: 292.5px;
+			height: 380px;
+			margin-top: 20px;
+			margin-left: 5px;
+			background-color: #ffffff;
+			float: left;
+		}
+		/*全球特色*/
+		.qqts .wrapper{
+			height: 800px;
+			background-color: #ededed;
+		}
+		.qqts .top{
+			height: 100px;
+			background-color: #ffffff;
+			color: #333;
+		}
+		.qqts .top>ul>li:first-child{
+			/*list-style: none;*/
+			font-size: 24px;
+			margin-top: 50px;
+			float: left;
+		}
+		.qqts .top>ul>li:last-child{
+			float: right;
+		}
+		.qqts .top>ul>li>ul>li{
+			padding: 0 2em;
+			margin-top: 60px;
+			float: left;
+		}
+		.qqts .buttom{
+			height: 700px;
+			/*background-color: #ffffff;*/
+		}
+		.qqts .buttom>ul>li:nth-child(1){
+			width: 1200px;
+			height: 300px;
+			background-color: #ffffff;
+			border: 1px solid #ededed;
+		}
+		.qqts .buttom>ul>li:nth-child(2),.qqts .buttom>ul>li:nth-child(3),.qqts .buttom>ul>li:nth-child(4),.qqts .buttom>ul>li:nth-child(5){
+			width: 292.5px;
+			height: 380px;
+			margin-top: 20px;
+			margin-left: 5px;
+			background-color: #ffffff;
+			float: left;
+		}
+		/*甄选家样式*/
+		.zxj .wrapper{
+			height: 500px;
+			background-color: #ededed;
+		}
+		.zxj .top{
+			height: 100px;
+			background-color: #ffffff;
+			color: #333;
+		}
+		.zxj .top>ul>li{
+			float: left;
+		}
+		.zxj .top>ul>li:first-child{
+			font-size: 24px;
+			margin-top: 50px;
+		}
+		.zxj .top>ul>li:last-child{
+			padding: 0 2em;
+			margin-top: 60px;
+		}
+		.zxj .buttom>ul>li{
+			float: left;
+		}
+		.zxj .buttom>ul>li:nth-child(1){
+			width: 788px;
+			height: 398px;
+			background-color: #ffffff;
+			border: 1px solid #ededed;
+		}
+		.zxj .buttom>ul>li:nth-child(2){
+			width: 400px;
+			height: 195px;
+			margin-left: 10px;
+			background-color: #ffffff;
+
+		}
+		.zxj .buttom>ul>li:nth-child(3){
+			width: 400px;
+			height: 195px;
+			margin-left: 10px;
+			margin-top: 10px;
+			background-color: #ffffff;
+		}
+		/*大家都在说*/
+		.people{
+			background-color: #ededed;
+		}
+		.people .wrapper{
+			height: 500px;
+			background-color: #ededed;
+		}
+		.people .top{
+			height: 100px;
+			background-color: #ffffff;
+			color: #333;
+		}
+		.people .top>ul>li{
+			float: left;
+		}
+		.people .top>ul>li:first-child{
+			font-size: 24px;
+			margin-top: 50px;
+		}
+		.people .top>ul>li:last-child{
+			padding: 0 2em;
+			margin-top: 60px;
+		}
+		.people .buttom>ul>li{
+			width: 385px;
+			height: 400px;
+			margin-left: 10px;
+			background-color: #ffffff;
+			float: left;
+		}
+		/*相关信息*/
+		.xgxx .wrapper{
+			height: 200px;
+			background-color: #ededed;
+			margin-top: 50px;
+		}
+		.xgxx ul>li{
+			width: 390px;
+			height: 190px;
+			background-color: #ffffff;
+			float: left;
+			border: 5px solid #ededed;
+		}
+		/*底部*/
+		.footer{
+			margin-top: 20px;
+			height: 200px;
+			background-color: #414141;
+		}
+		.footer .top{
+			height: 96px;
+			/*background-color: #ffffff;*/
+			border-bottom: 2px solid #ededed;
+		}
+		.footer .buttom{
+			height: 96px;
+			/*background-color: #ffffff;*/
+			border-top: 2px solid #ededed;
+		}
+	</style>
+</head>
+<body>
+	<!-- 顶端 -->
+	<div class="top">
+	<!-- 容器居中，宽度1200px -->
+		<div class="wrapper">
+			<!-- 左边 -->
+			<div class="left">用浦发借记卡</div>
+			<!-- 右边 -->
+			<div class="right">
+				<ul>
+					<li><a href="">注册/登录</a></li>
+					<li><a href="">订单</a></li>
+					<li><a href="">会员</a></li>
+					<li><a href="">甄选家</a></li>
+					<li><a href="">企业采购</a></li>
+					<li><a href="">客户服务</a></li>
+					<li><a href="">APP</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- 顶端结束 -->
+
+	<!-- header -->
+	<div class="header">
+		<div class="wrapper">
+			<div class="left">
+
+			</div>
+		<div class="right">
+		<!-- 搜索框 -->
+			<div class="search">
+				<ul >
+					<li></li>
+					<li></li>
+				</ul>
+			</div>
+			<!-- 购物车 -->
+			<div class="buy">
+				
+			</div>
+		</div>
+		</div>
+	</div>
+	<!-- header结束 -->
+
+	<!-- 导航栏 -->
+	<div class="nav">
+		<div class="wrapper">
+			<ul>
+				<li>首页</li>
+				<li>居家生活</li>
+				<li>服饰鞋包</li>
+				<li>美食酒水</li>
+				<li>个护清洁</li>
+				<li>母婴亲子</li>
+				<li>运动旅行</li>
+				<li>数码家电</li>
+				<li>全球特色</li>
+				<li>为你严选</li>
+				<li>众筹</li>
+			</ul>
+		</div>
+	</div>
+	<!-- 导航栏结束 -->
+
+	<!-- 宣传图 -->
+	<div class="xct">
+		
+	</div>
+	<!-- 宣传图结束 -->
+
+	<!-- 品牌制造商 -->
+	<div class="ppmade">
+		<div class="wrapper">
+			<!-- 文字部分 -->
+			<div class="top">
+				<ul>
+					<li>
+						<p>品牌制造商</p>
+						<p>工厂直达消费者，剔除品牌溢价</p>
+					</li>
+					<li>
+						<p>更多制造商</p>
+					</li>
+				</ul>
+			</div>
+			<!-- 商品图片信息 -->
+			<div class="buttom">
+				<ul>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- 品牌制造商结束 -->
+
+	<!-- 新品首发 -->
+	<div class="xpshow">
+		<div class="wrapper">
+		<!-- 文字部分 -->
+			<div class="top">
+				<ul>
+					<li>
+						<p>新品首发</p>
+						<p>为你寻觅时间好物</p>
+					</li>
+					<li>
+						<p>更多新品</p>
+					</li>
+				</ul>
+			</div>
+			<!-- 商品图片信息 -->
+			<div class="buttom">
+				<ul>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- 新品首发结束 -->
+
+	<!-- 人气推荐 -->
+
+	<div class="popular">
+		<div class="wrapper">
+		<!-- 文字部分 -->
+			<div class="top">
+				<ul>
+					<li>
+						<p>人气推荐</p>
+						<p>编辑推荐</p>
+						<p>热销总榜</p>
+					</li>
+					<li>
+						<p>更多推荐</p>
+					</li>
+				</ul>
+			</div>
+			<!-- 商品图片信息 -->
+			<div class="buttom">
+				<ul class="pic">
+					<li>
+						<div></div>
+						<div></div>
+					</li>
+					<li>
+						<div></div>
+						<div></div>
+					</li>
+					<li>
+						<div></div>
+						<div></div>
+					</li>
+					<li>
+						<div></div>
+						<div></div>
+					</li>
+					<li>
+						<div></div>
+						<div></div>
+					</li>
+					<li>
+						<div></div>
+						<div></div>
+					</li>
+					<li>
+						<div></div>
+						<div></div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- 人气推荐结束 -->
+
+	<!-- 福利社 -->
+	<div class="fl">
+		<div class="wrapper">
+			<!-- 文字部分 -->
+			<div class="top">
+				<ul>
+					<li>福利社</li>
+					<li>查看全部福利</li>
+				</ul>
+			</div>
+			<!-- 商品图片 -->
+			<div class="buttom">
+				<ul>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- 福利社结束 -->
+
+	<!-- 居家生活 -->
+	<div class="jjlive">
+		<div class="wrapper">
+		<!-- 文字部分 -->
+			<div class="top">
+				<ul>
+					<li>居家生活</li>
+					<li>
+						<ul>
+							<li>夏凉热卖</li>
+							<li>主题床品</li>
+							<li>北欧原木</li>
+							<li>餐厨系列</li>
+							<li>床品件套</li>
+							<li>被枕盖毯</li>
+							<li>床垫床褥</li>
+							<li>查看更多</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<!-- 商品图片信息 -->
+			<div class="buttom">
+				<ul>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- 居家生活结束 -->
+
+	<!-- 服饰鞋包 -->
+		<div class="shoes">
+		<div class="wrapper">
+		<!-- 文字部分 -->
+			<div class="top">
+				<ul>
+					<li>服饰鞋包</li>
+					<li>
+						<ul>
+							<li>人气爆款</li>
+							<li>好物上新</li>
+							<li>七夕好礼</li>
+							<li>男式T恤/POLO</li>
+							<li>男士衬衫</li>
+							<li>男士裤装</li>
+							<li>男士牛仔</li>
+							<li>查看更多</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<!-- 商品图片信息 -->
+			<div class="buttom">
+				<ul>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- 服饰鞋包结束 -->
+
+	<!-- 美食酒水 -->
+	<div class="food">
+		<div class="wrapper">
+		<!-- 文字部分 -->
+			<div class="top">
+				<ul>
+					<li>美食酒水</li>
+					<li>
+						<ul>
+							<li>中秋好礼</li>
+							<li>新品首发</li>
+							<li>好味精选</li>
+							<li>饼干糕点</li>
+							<li>小食糖巧</li>
+							<li>肉类零食</li>
+							<li>坚果炒货</li>
+							<li>查看更多</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<!-- 商品图片信息 -->
+			<div class="buttom">
+				<ul>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- 美食酒水结束 -->
+
+	<!-- 个护清洁 -->
+	<div class="clear">
+		<div class="wrapper">
+		<!-- 文字部分 -->
+			<div class="top">
+				<ul>
+					<li>个护清洁</li>
+					<li>
+						<ul>
+							<li>爆款榜单</li>
+							<li>新品尝鲜</li>
+							<li>基础护肤</li>
+							<li>卸妆洁面</li>
+							<li>护肤工具</li>
+							<li>洗发护发</li>
+							<li>身体护理</li>
+							<li>查看更多</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<!-- 商品图片信息 -->
+			<div class="buttom">
+				<ul>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- 个护清洁结束 -->
+
+	<!-- 母婴亲子 -->
+	<div class="baby">
+		<div class="wrapper">
+		<!-- 文字部分 -->
+			<div class="top">
+				<ul>
+					<li>母婴亲子</li>
+					<li>
+						<ul>
+							<li>必买好货</li>
+							<li>五折封顶</li>
+							<li>囤货精选</li>
+							<li>开学好物</li>
+							<li>七夕有礼</li>
+							<li>初秋精选</li>
+							<li>上衣</li>
+							<li>查看更多</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<!-- 商品图片信息 -->
+			<div class="buttom">
+				<ul>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- 母婴亲子结束 -->
+
+	<!-- 运动旅行 -->
+	<div class="sport">
+		<div class="wrapper">
+		<!-- 文字部分 -->
+			<div class="top">
+				<ul>
+					<li>运动旅行</li>
+					<li>
+						<ul>
+							<li>Yessing</li>
+							<li>夏季清凉防晒</li>
+							<li>瑜伽系列</li>
+							<li>出行好物</li>
+							<li>男式运动T恤</li>
+							<li>男式运动外套/卫衣</li>
+							<li>男式运动裤装</li>
+							<li>查看更多</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<!-- 商品图片信息 -->
+			<div class="buttom">
+				<ul>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- 运动旅行结束 -->
+
+	<!-- 数码家电 -->
+	<div class="smjd">
+		<div class="wrapper">
+		<!-- 文字部分 -->
+			<div class="top">
+				<ul>
+					<li>数码家电</li>
+					<li>
+						<ul>
+							<li>夏季热卖</li>
+							<li>甄选爆款</li>
+							<li>颜值好物</li>
+							<li>口腔护理</li>
+							<li>身体护理</li>
+							<li>面部护理</li>
+							<li>头发护理</li>
+							<li>查看更多</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<!-- 商品图片信息 -->
+			<div class="buttom">
+				<ul>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- 数码家电结束 -->
+
+	<!-- 全球特色 -->
+	<div class="qqts">
+		<div class="wrapper">
+		<!-- 文字部分 -->
+			<div class="top">
+				<ul>
+					<li>全球特色</li>
+					<li>
+						<ul>
+							<li>七夕上新</li>
+							<li>当季星品</li>
+							<li>好评推荐</li>
+							<li>礼品点卡</li>
+							<li>礼盒</li>
+							<li>床品家纺</li>
+							<li>餐厨用品</li>
+							<li>查看更多</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<!-- 商品图片信息 -->
+			<div class="buttom">
+				<ul>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- 全球特色结束 -->
+
+	<!-- 甄选家 -->
+	<div class="zxj">
+		<div class="wrapper">
+			<!-- 文字部分 -->
+			<div class="top">
+				<ul>
+					<li>甄选家</li>
+					<li>我们在寻找，对生活有态度的你</li>
+				</ul>
+			</div>
+			<!-- 商品图片信息 -->
+			<div class="buttom">
+				<ul>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- 甄选家结束 -->
+
+	<!-- 大家都再说 -->
+	<div class="people">
+		<div class="wrapper">
+			<!-- 文字部分 -->
+			<div class="top">
+				<ul>
+					<li>大家都再说</li>
+					<li>生活没有统一标准</li>
+				</ul>
+			</div>
+			<!-- 商品图片信息 -->
+			<div class="buttom">
+				<ul>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- 大家都再说结束 -->
+
+	<!-- 相关信息 -->
+	<div class="xgxx">
+		<div class="wrapper">
+			<ul>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+	</div>
+	<!-- 相关信息结束 -->
+
+	<!-- 底部 -->
+	<div class="footer">
+		<div class="top"></div>
+		<div class="buttom"></div>
+	</div>
+	<!-- 底部结束 -->
+</body>
+</html>

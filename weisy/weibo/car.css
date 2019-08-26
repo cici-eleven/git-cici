@@ -1,0 +1,232 @@
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+html,body,.wrapper{
+	max-width: 650px;
+	height: 100%;
+	margin: 0 auto;
+}
+ul{
+	list-style: none;
+}
+.wrapper{
+	display: flex;
+	flex-direction: column;
+	/*overflow: scroll;*/
+
+	}
+
+.header{
+	width: 100%;
+	/*position: fixed;*/
+	height: 3em;
+	background-color: #f5f5f5;
+	border-bottom: 1px solid #ededed;
+}
+.footer{
+	position: fixed;
+	bottom: 0;
+	width: 650px;
+	height: 50px;
+	background-color: #f9f9f9;
+}
+.container{
+	flex: 1;
+	background-color: #f2f2f2;
+	/**/
+	/*display: flex;
+	flex-direction: column;*/
+}
+
+/*顶部样式*/
+.header ul{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+}
+.header ul>li{
+	padding: 10px 0;
+	/*float: left;*/
+}
+.header ul>li:nth-child(1){
+	margin-left: 10px;
+	flex: 1;
+}
+.header ul>li:nth-child(2){
+	margin-left: 150px;
+	font-size: 16px;
+	flex: 3;	
+}
+/*顶部空白部分*/
+.top{
+	background-color: #f2f2f2;
+	height: 20px;
+}
+/*搜索栏部分*/
+.search{
+	background-color: #e3e4e6;
+	height:60px; 
+}
+/*清除浮动*/
+.search::after{
+	display: none;
+	content: "";
+	clear: both;
+}
+.search div{
+	float: left;
+	padding: 5px 1em;
+}
+.search-text{
+	background-color: #ffffff;
+	width: 80%;
+	margin-left: 8%;
+	padding: 5px 0;
+	margin-top: 15px;
+}
+.search input{
+	border: none;
+}
+/*宣传图样式*/
+.img{
+	width: 100%;
+	height: 170px;
+}
+/*导航样式*/
+.nav{
+	/*width: 100%;*/
+	margin-top: 20px;
+	height: 60px;
+	border-top: 1px solid #ededed;
+	border-bottom: 1px solid #ededed;
+	padding: 1em 0;
+	background-color: #ffffff;
+	
+	
+}
+
+.nav-l ul{
+	display: flex;
+	flex-direction: row;
+	width:100%;
+	/*float: left;*/
+	text-align: center;
+	/*flex-wrap: nowrap;*/
+}
+.nav-l ul>li{
+	/*float: left;*/
+	flex: 1;
+	font-size: 12px;
+	border-right: 1px solid #ededed;
+	padding: 0 30px;
+	display: flex;
+	flex-direction: column;
+	
+}
+.nav-l ul>li:last-child{
+	border-right: 0;
+}
+.nav-l img{
+	width: 40px;
+	height: 40px;
+}
+/*微博动态栏样式*/
+.msg::after{
+	display: block;
+	content: "";
+	clear: both;
+}
+.msg{
+	width: 100%;
+	height: 200px;
+	background-color: #fff;
+	border-top: 1px solid #ededed;
+	border-bottom: 1px solid #ededed;
+	margin-top: 20px;
+}
+.msg div{
+	float: left;
+}
+.msg .user{
+	width: 100%;
+}
+.msg-top{
+	margin: 11px 0;
+	background-color: #fff;
+}
+/*用户昵称及信息 */
+/*清除浮动*/
+.user ul>li>ul::after{
+	display: block;
+	content: "";
+	clear: both;
+}
+.user ul>li>ul>li{
+	float: left;
+}
+.user ul>li>ul>li:nth-child(1){
+	position: relative;
+}
+.user ul>li>ul>li:nth-child(2){
+	color: #f56200;
+	margin-left: 10px;
+}
+.user ul>li>ul>li:nth-child(3){
+	color: #939393;
+	position: absolute;
+	margin-left: 80px;
+	margin-top: 40px;
+}
+/*微博动态底部评论*/
+/*清除浮动*/
+.msg-bottom ul::after{
+	display: block;
+	content: "";
+	clear: both;
+}
+.msg-bottom{
+	width: 100%;
+	background-color: #fff;
+	height: 2em;
+	border-top: 1px solid #ededed;
+}
+.msg-bottom ul{
+	width: 100%;
+	display: flex;
+}
+.msg-bottom ul>li{
+	border-right: 1px solid #ededed;
+	/*float: left;*/
+	flex: 1;
+	text-align: center;
+	line-height: 2em;
+}
+.msg-bottom ul>li:last-child{
+	border-right:0;
+}
+
+/*底部导航样式*/
+.footer img{
+	width: 40px;
+	height: 40px;
+}
+.footer ul{
+	display: flex;
+	flex-direction: row;
+	width:100%;
+	text-align: center;
+}
+.footer ul>li{
+	flex: 1;
+	font-size: 12px;
+	border-right: 1px solid #ededed;
+	padding: 0 30px;
+	display: flex;
+	flex-direction: column;
+	
+}
+.footer ul>li:last-child{
+	border-right: 0;
+}

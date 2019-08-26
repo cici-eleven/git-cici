@@ -1,0 +1,2076 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>网易严选</title>
+	<style type="text/css">
+		html{
+			color: #333;
+			font:normal 12px "微软雅黑","Microsoft YaHei",serif;
+		}
+		body,p{
+			margin: 0;
+		}
+		ul{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		a{
+			color: #ededed;
+			text-decoration: none;
+		}
+		/*顶部样式设置*/
+		.top{
+			background-color: #333;
+			color: #ededed;
+		}
+		.wrapper{
+			width: 1200px;
+			margin: 0 auto;
+		}
+		.top .wrapper{
+			line-height: 3em;
+		}
+		.top .wrapper::after{
+			display: block;
+			content: "";
+			clear: both;
+		}
+		.top .left{
+			float: left;
+		}
+
+		.top .right{
+			float: right;
+		}
+		.right>ul::after{
+			display: block;
+			content: "";
+			clear: both;
+		}
+		.right>ul>li{
+			float: left;
+		}
+		ul>li>a{
+			padding: 0 1em;
+			border-right: 1px solid #ededed;
+		}
+		/*header样式设置*/
+		.header .left{
+			float: left;
+		}
+		.header .right{
+			height: 100px;
+			margin-left: 380px;
+		}
+		.header .search input {
+			width: 380px;
+			border: none;
+		}
+		.header .search>ul::after {
+			content: "";
+			display: block;
+			clear: both;
+		}
+		.header .search>ul{
+			float: left;
+		}
+		.header .search >ul> li {
+			float: left;
+			line-height: 3rem;
+			margin-top: 30px;
+		}
+		.header .search ul> li:first-child{
+			border-top-left-radius: 1.5em;
+			border-bottom-left-radius: 1.5em;
+			width: 440px;
+			border: 1px solid #b4a078;
+		}
+		.header .search ul> li:last-child{
+			width: 50px;
+			font-size: 16px;
+			color: #fff;
+			background-color:#b4a078;
+			text-align: center;
+			border: 1px solid #b4a078;
+			border-bottom-right-radius: 1.5em; 
+			border-top-right-radius: 1.5em; 
+		}
+		.header .buy{
+			width: 150px;
+			margin-right: 50px;
+			margin-top: 30px;
+			float: right;
+		}
+		.header .buy li{
+			margin-top: 10px;
+		}
+		.header .buy li>i{
+			float: left;
+			margin-right: 10px;
+		}
+		.header .buy li:after{
+			display: block;
+			content: "";
+			clear: both;
+		}
+		.header .buy  li:first-child{
+			border-top-left-radius: 1.5em;
+			border-bottom-left-radius: 1.5em;
+			width: 100px;
+			border: 1px solid #b4a078;
+		}
+		.header .buy li:last-child{
+			width: 100px;
+			font-size: 16px;
+			color: #b4a078;
+			background-color:#ffffff;
+			text-align: center;
+			border: 1px solid #b4a078;
+			border-bottom-right-radius: 1.5em; 
+			border-top-right-radius: 1.5em; 
+		}
+		/*导航栏样式*/
+		.nav{
+			height: 2em;
+			/*margin: 0;
+			padding: 0;*/
+			/*float: left;*/
+		}
+		.nav .wrapper ul{
+			width: 100%;
+			height: 2em;
+			margin: 12px 0;
+		}
+		.nav .wrapper ul>li{
+			float: left;
+			font-size: 14px;
+			padding: 0 1.8em;
+		}
+		/*宣传图样式*/
+		.xct{
+			width: 100%;
+			height: 400px;
+			/*background-color: #b4a078;*/
+		}
+		/*品牌制造*/
+		.ppmade{
+			width: 1200px;
+			margin: 0 auto;
+		}
+		.ppmade .wrapper{
+			height: 455px;
+			background-color: #ffffff;
+		}
+		.ppmade .top{
+			height: 100px;
+			background-color: #ffffff;
+			color: #333;
+		}
+		/*清除*/
+		.ppmade .top>ul::after{
+			display: block;
+			content: "";
+			clear: both;
+		}
+
+		.ppmade .top>ul>li:first-child{
+			float: left;
+			/*padding: 0 1.5em;*/
+			
+		}
+		.ppmade .top>ul>li:last-child{
+			float: right;
+			margin-top: 60px;
+		}
+
+		/*清除*/
+		.ppmade .top>ul>li:first-child::after{
+			display: block;
+			content: "";
+			clear: both;
+		}
+		.ppmade .top>ul>li:first-child>p:nth-of-type(1){
+			font-size: 24px;
+			float: left;
+			margin-top: 50px;
+		}
+		.ppmade .top>ul>li:first-child>p:nth-of-type(2){
+			float: right;
+			margin-left: 20px;
+			margin-top: 60px;
+		}
+		.ppmade .buttom{
+			height: 355px;
+		}
+
+		/*清除*/
+		.ppmade .buttom::after{
+			display: block;
+			content: "";
+			clear: both;
+		}
+
+		.ppmade .buttom li:nth-child(1),.ppmade .buttom li:nth-child(2){
+			/*width: 400px;*/
+			/*height: 350px;*/
+			/*margin-top: 10px;*/
+			/*background-color: #ffffff;*/
+			float: left;
+			margin-left: 10px;
+		}
+		.ppmade .buttom li:nth-child(3),.ppmade .buttom li:nth-child(4){
+			width: 390px;
+			height: 160px;
+			/*background-color: #ffffff;*/
+			/*margin-top: 10px;*/
+			margin-left: 10px;
+			float: left;
+		}
+		.ppmade .buttom li:nth-child(4){
+			margin-top: 20px;
+		}
+
+		/*新品首发样式*/
+		.xpshow .wrapper{
+			height: 450px;
+			background-color: #ffffff;
+		}
+		.xpshow .top{
+			height: 100px;
+			background-color: #ffffff;
+			color: #333;
+		}
+
+		/*清除*/
+		.xpshow .top::after{
+			display: block;
+			content: "";
+			clear: both;
+		}
+		/*清除*/
+		.xpshow .top>ul::after{
+			display: block;
+			content: "";
+			clear: both;
+		}
+		.xpshow .top>ul>li:first-child{
+			float: left;
+			/*padding: 0 1.5em;*/
+			
+		}
+		.xpshow .top>ul>li:last-child{
+			float: right;
+			margin-top: 60px;
+		}
+		/*清除*/
+		.xpshow .top>ul>li::after{
+			display: block;
+			content: "";
+			clear: both;
+		}
+		.xpshow .top>ul>li:first-child>p:nth-of-type(1){
+			font-size: 24px;
+			float: left;
+			margin-top: 50px;
+		}
+		.xpshow .top>ul>li:first-child>p:nth-of-type(2){
+			float: right;
+			margin-left: 20px;
+			margin-top: 60px;
+		}
+		.xpshow .buttom{
+			background-color: #ffffff;
+			height: 350px;
+		}
+		/*清除*/
+		.xpshow .buttom ul::after{
+			display: block;
+			content: "";
+			clear: both;
+		}
+		.xpshow .buttom ul>li{
+			width: 287.5px;
+			text-align: center;
+			float: left;
+		}
+		.xpshow .buttom p:first-child{
+			margin-left: 100px;
+			color: #d42850;
+			float: left;
+		}
+		.xpshow .buttom p:last-child{
+			margin-right: 100px;
+			color: #99a6bf;
+			text-decoration: line-through;
+		}
+
+		/*人气推荐样式*/
+		.popular{
+			background-color: #f4f0ea;
+		}
+		.popular .wrapper{
+			height: 630px;
+			background-color: #f4f0ea;
+		}
+		.popular .top{
+			height: 100px;
+			background-color: #f4f0ea;
+			color: #333;
+		}
+		.popular .top>ul>li:first-child{
+			float: left;
+			/*padding: 0 1.5em;*/
+			
+		}
+		.popular .top>ul>li:last-child{
+			float: right;
+			margin-top: 60px;
+		}
+		.popular .top>ul>li:first-child>p:nth-of-type(1){
+			float: left;
+			font-size: 24px;
+			margin-top: 50px;
+		}
+		.popular .top>ul>li:first-child>p:nth-of-type(2),.popular .top>ul>li:first-child>p:nth-of-type(3){
+			float: left;
+			margin-left: 20px;
+			margin-top: 60px;
+		}
+		.popular .buttom{
+			background-color: #ededed;
+			height: 530px;
+		}
+		/*清除*/
+		.popular .pic::after{
+			display: block;
+			content: "";
+			clear: both;
+		}
+		.popular .pic>li{
+			float: left;
+		}
+		.popular .pic>li:nth-child(1)>div:first-child{
+			width: 400px;
+			height: 398px;
+			border-bottom: 2px solid #ededed;
+			background-color: #ffffff;
+
+		}
+		.popular .pic>li:nth-child(1)>div:last-child{
+			width: 400px;
+			height: 130px;
+			background-color: #ffffff;
+			/*margin-left: 10px;*/
+		}
+		.popular .pic>li:nth-child(2)>div:first-child{
+		/*	width: 250px;
+			height: 179px;*/
+			border-bottom: 1px solid #ededed;
+			background-color: #ffffff;
+			margin-left: 15px;
+		}
+		.popular .pic>li:nth-child(2)>div:last-child{
+			width: 250px;
+			height: 80px;
+			background-color: #ffffff;
+			margin-left: 15px;
+		}
+		.popular .pic>li:nth-child(3)>div:first-child{
+		/*	width: 250px;
+			height: 179px;*/
+			border-bottom: 1px solid #ededed;
+			background-color: #ffffff;
+			margin-left: 15px;
+		}
+		.popular .pic>li:nth-child(3)>div:last-child{
+			width: 250px;
+			height: 80px;
+			background-color: #ffffff;
+			margin-left: 15px;
+
+		}
+		.popular .pic>li:nth-child(4)>div:first-child{
+			/*width: 250px;
+			height: 179px;*/
+			border-bottom: 1px solid #ededed;
+			background-color: #ffffff;
+			margin-left: 15px;
+		}
+		.popular .pic>li:nth-child(4)>div:last-child{
+			width: 250px;
+			height: 80px;
+			background-color: #ffffff;
+			margin-left: 15px;
+		}
+		.popular .pic>li:nth-child(5)>div:first-child{
+		/*	width: 250px;
+			height: 179px;*/
+			border-bottom: 1px solid #ededed;
+			background-color: #ffffff;
+			margin-left: 15px;
+			margin-top: 10px;
+		}
+		.popular .pic>li:nth-child(5)>div:last-child{
+			width: 250px;
+			height: 80px;
+			background-color: #ffffff;
+			margin-left: 15px;
+		}
+		.popular .pic>li:nth-child(6)>div:first-child{
+		/*	width: 250px;
+			height: 179px;*/
+			border-bottom: 1px solid #ededed;
+			background-color: #ffffff;
+			margin-left: 15px;
+			margin-top: 10px;
+		}
+		.popular .pic>li:nth-child(6)>div:last-child{
+			width: 250px;
+			height: 80px;
+			background-color: #ffffff;
+			margin-left: 15px;
+		}
+		.popular .pic>li:nth-child(7)>div:first-child{
+		/*	width: 250px;
+			height: 179px;*/
+			border-bottom: 1px solid #ededed;
+			background-color: #ffffff;
+			margin-left: 15px;
+			margin-top: 10px;
+		}
+		.popular .pic>li:nth-child(7)>div:last-child{
+			width: 250px;
+			height: 80px;
+			background-color: #ffffff;
+			margin-left: 15px;
+		}
+		.popular::after{
+			display: block;
+			content: "";
+			clear: both;
+		}
+		.popular .pic ul{
+			/*float: left;*/
+			text-align: center;
+			line-height: 2em;
+		}
+		.popular .pic>li:nth-child(1)>div:last-child>ul{
+			line-height: 2.5em;
+			font-size: 16px;
+		}
+		/*福利社*/
+		.fl{
+			background-color:#f4f0ea;
+		}
+		.fl .wrapper{
+			height: 500px;
+			background-color: #f4f0ea;
+		}
+		.fl .top{
+			height: 100px;
+			background-color: #f4f0ea;
+			color: #333;
+		}
+		.fl .top>ul>li:first-child{
+			font-size: 24px;
+			margin-top: 50px;
+			float: left;
+		}
+		.fl .top>ul>li:last-child{
+			margin-top: 60px;
+			float: right;
+		}
+		.fl .buttom>ul>li{
+			float: left;
+		}
+		.fl .buttom>ul>li:nth-child(1){
+			/*width: 298px;
+			height: 380px;*/
+			/*background-color: #ffffff;*/
+			border-right: 2px solid #ededed;
+			/*margin-top: 10px;*/
+		}
+		.fl .buttom>ul>li:nth-child(2){
+			/*width: 598px;
+			height: 380px;*/
+			background-color: #ffffff;
+			border-right: 2px solid #ededed;
+			/*margin-top: 10px;*/
+		}
+		.fl .buttom>ul>li:nth-child(3){
+			/*width: 298px;
+			height: 380px;*/
+			background-color: #ffffff;
+			border-right: 2px solid #ededed;
+			/*margin-top: 10px;*/
+		}
+		/*居家生活*/
+		.jjlive .wrapper{
+			height: 800px;
+			/*background-color: #ededed;*/
+		}
+		.jjlive .top{
+			height: 100px;
+			background-color: #ffffff;
+			color: #333;
+		}
+		.jjlive .top>ul>li:first-child{
+			/*list-style: none;*/
+			font-size: 24px;
+			margin-top: 50px;
+			float: left;
+		}
+		.jjlive .top>ul>li:last-child{
+			float: right;
+		}
+		.jjlive .top>ul>li>ul>li{
+			padding: 0 2em;
+			margin-top: 60px;
+			float: left;
+		}
+		.jjlive .buttom{
+			height: 700px;
+			/*background-color: #ffffff;*/
+		}
+		.jjlive .buttom>ul>li:nth-child(1){
+			width: 1200px;
+			height: 300px;
+			/*background-color: #ffffff;*/
+			border: 1px solid #ededed;
+		}
+		.jjlive .buttom>ul>li:nth-child(2),.jjlive .buttom>ul>li:nth-child(3),.jjlive .buttom>ul>li:nth-child(4),.jjlive .buttom>ul>li:nth-child(5){
+			margin-top: 20px;
+			margin-left: 5px;
+			float: left;
+		}
+		.jjlive .buttom div>img{
+			width: 292.5px;
+			height: 320px;
+			background-color: #f4f4f4;
+
+		}
+		.jjlive .buttom div>ul{
+			text-align: center;
+			line-height: 1.4em;
+			background-color: #ffffff;
+		}
+		/*服饰鞋包*/
+		.shoes .wrapper{
+			height: 800px;
+			/*background-color: #ededed;*/
+		}
+		.shoes .top{
+			height: 100px;
+			background-color: #ffffff;
+			color: #333;
+		}
+		.shoes .top>ul>li:first-child{
+			/*list-style: none;*/
+			font-size: 24px;
+			margin-top: 50px;
+			float: left;
+		}
+		.shoes .top>ul>li:last-child{
+			float: right;
+		}
+		.shoes .top>ul>li>ul>li{
+			padding: 0 2em;
+			margin-top: 60px;
+			float: left;
+		}
+		.shoes .buttom{
+			height: 700px;
+			background-color: #ffffff;
+		}
+		.shoes .buttom>ul>li:nth-child(1){
+			width: 1200px;
+			height: 300px;
+			background-color: #ffffff;
+			/*border: 1px solid #ededed;*/
+		}
+		.shoes .buttom>ul>li:nth-child(2),.shoes .buttom>ul>li:nth-child(3),.shoes .buttom>ul>li:nth-child(4),.shoes .buttom>ul>li:nth-child(5){
+			margin-top: 20px;
+			margin-left: 5px;
+			float: left;
+		}
+		.shoes .buttom div>img{
+			width: 292.5px;
+			height: 320px;
+			background-color: #f4f4f4;
+
+		}
+		.shoes .buttom div>ul{
+			text-align: center;
+			line-height: 1.4em;
+			background-color: #ffffff;
+		}
+		/*美食酒水*/
+		.food .wrapper{
+			height: 800px;
+			/*background-color: #ededed;*/
+		}
+		.food .top{
+			height: 100px;
+			background-color: #ffffff;
+			color: #333;
+		}
+		.food .top>ul>li:first-child{
+			/*list-style: none;*/
+			font-size: 24px;
+			margin-top: 50px;
+			float: left;
+		}
+		.food .top>ul>li:last-child{
+			float: right;
+		}
+		.food .top>ul>li>ul>li{
+			padding: 0 2em;
+			margin-top: 60px;
+			float: left;
+		}
+		.food .buttom{
+			height: 700px;
+			/*background-color: #ffffff;*/
+		}
+		.food .buttom>ul>li:nth-child(1){
+			width: 1200px;
+			height: 300px;
+			/*background-color: #ffffff;*/
+			/*border: 1px solid #ededed;*/
+		}
+		.food .buttom>ul>li:nth-child(2),.food .buttom>ul>li:nth-child(3),.food .buttom>ul>li:nth-child(4),.food .buttom>ul>li:nth-child(5){
+			margin-top: 20px;
+			margin-left: 5px;
+			float: left;
+		}
+		.food .buttom div>img{
+			width: 292.5px;
+			height: 320px;
+			background-color: #f4f4f4;
+
+		}
+		.food .buttom div>ul{
+			text-align: center;
+			line-height: 1.4em;
+			background-color: #ffffff;
+		}
+		/*个护清洁*/
+		.clear .wrapper{
+			height: 800px;
+			/*background-color: #ededed;*/
+		}
+		.clear .top{
+			height: 100px;
+			background-color: #ffffff;
+			color: #333;
+		}
+		.clear .top>ul>li:first-child{
+			/*list-style: none;*/
+			font-size: 24px;
+			margin-top: 50px;
+			float: left;
+		}
+		.clear .top>ul>li:last-child{
+			float: right;
+		}
+		.clear .top>ul>li>ul>li{
+			padding: 0 2em;
+			margin-top: 60px;
+			float: left;
+		}
+		.clear .buttom{
+			height: 700px;
+			/*background-color: #ffffff;*/
+		}
+		.clear .buttom>ul>li:nth-child(1){
+			width: 1200px;
+			height: 300px;
+			/*background-color: #ffffff;*/
+			/*border: 1px solid #ededed;*/
+		}
+		.clear .buttom>ul>li:nth-child(2),.clear .buttom>ul>li:nth-child(3),.clear .buttom>ul>li:nth-child(4),.clear .buttom>ul>li:nth-child(5){
+			margin-top: 20px;
+			margin-left: 5px;
+			float: left;
+		}
+		.clear .buttom div>img{
+			width: 292.5px;
+			height: 320px;
+			background-color: #f4f4f4;
+
+		}
+		.clear .buttom div>ul{
+			text-align: center;
+			line-height: 1.4em;
+			background-color: #ffffff;
+		}
+		/*母婴亲子*/
+		.baby .wrapper{
+			height: 800px;
+			/*background-color: #ededed;*/
+		}
+		.baby .top{
+			height: 100px;
+			background-color: #ffffff;
+			color: #333;
+		}
+		.baby .top>ul>li:first-child{
+			/*list-style: none;*/
+			font-size: 24px;
+			margin-top: 50px;
+			float: left;
+		}
+		.baby .top>ul>li:last-child{
+			float: right;
+		}
+		.baby .top>ul>li>ul>li{
+			padding: 0 2em;
+			margin-top: 60px;
+			float: left;
+		}
+		.baby .buttom{
+			height: 700px;
+			/*background-color: #ffffff;*/
+		}
+		.baby .buttom>ul>li:nth-child(1){
+			width: 1200px;
+			height: 300px;
+			/*background-color: #ffffff;*/
+			/*border: 1px solid #ededed;*/
+		}
+		.baby .buttom>ul>li:nth-child(2),.baby .buttom>ul>li:nth-child(3),.baby .buttom>ul>li:nth-child(4),.baby .buttom>ul>li:nth-child(5){
+			margin-top: 20px;
+			margin-left: 5px;
+			float: left;
+		}
+		.baby .buttom div>img{
+			width: 292.5px;
+			height: 320px;
+			background-color: #f4f4f4;
+
+		}
+		.baby .buttom div>ul{
+			text-align: center;
+			line-height: 1.4em;
+			background-color: #ffffff;
+		}
+		/*运动旅行*/
+		.sport .wrapper{
+			height: 800px;
+			/*background-color: #ededed;*/
+		}
+		.sport .top{
+			height: 100px;
+			background-color: #ffffff;
+			color: #333;
+		}
+		.sport .top>ul>li:first-child{
+			/*list-style: none;*/
+			font-size: 24px;
+			margin-top: 50px;
+			float: left;
+		}
+		.sport .top>ul>li:last-child{
+			float: right;
+		}
+		.sport .top>ul>li>ul>li{
+			padding: 0 2em;
+			margin-top: 60px;
+			float: left;
+		}
+		.sport .buttom{
+			height: 700px;
+			/*background-color: #ffffff;*/
+		}
+		.sport .buttom>ul>li:nth-child(1){
+			width: 1200px;
+			height: 300px;
+			/*background-color: #ffffff;*/
+			/*border: 1px solid #ededed;*/
+		}
+		.sport .buttom>ul>li:nth-child(2),.sport .buttom>ul>li:nth-child(3),.sport .buttom>ul>li:nth-child(4),.sport .buttom>ul>li:nth-child(5){
+			margin-top: 20px;
+			margin-left: 5px;
+			float: left;
+		}
+		.sport .buttom div>img{
+			width: 292.5px;
+			height: 320px;
+			background-color: #f4f4f4;
+
+		}
+		.sport .buttom div>ul{
+			text-align: center;
+			line-height: 1.4em;
+			background-color: #ffffff;
+		}
+		/*数码家电*/
+		.smjd .wrapper{
+			height: 800px;
+			/*background-color: #ededed;*/
+		}
+		.smjd .top{
+			height: 100px;
+			background-color: #ffffff;
+			color: #333;
+		}
+		.smjd .top>ul>li:first-child{
+			/*list-style: none;*/
+			font-size: 24px;
+			margin-top: 50px;
+			float: left;
+		}
+		.smjd .top>ul>li:last-child{
+			float: right;
+		}
+		.smjd .top>ul>li>ul>li{
+			padding: 0 2em;
+			margin-top: 60px;
+			float: left;
+		}
+		.smjd .buttom{
+			height: 700px;
+			/*background-color: #ffffff;*/
+		}
+		.smjd .buttom>ul>li:nth-child(1){
+			width: 1200px;
+			height: 300px;
+			/*background-color: #ffffff;*/
+			/*border: 1px solid #ededed;*/
+		}
+		.smjd .buttom>ul>li:nth-child(2),.smjd .buttom>ul>li:nth-child(3),.smjd .buttom>ul>li:nth-child(4),.smjd .buttom>ul>li:nth-child(5){
+			margin-top: 20px;
+			margin-left: 5px;
+			float: left;
+		}
+		.smjd .buttom div>img{
+			width: 292.5px;
+			height: 320px;
+			background-color: #f4f4f4;
+
+		}
+		.smjd .buttom div>ul{
+			text-align: center;
+			line-height: 1.4em;
+			background-color: #ffffff;
+		}
+		/*全球特色*/
+		.qqts .wrapper{
+			height: 800px;
+			/*background-color: #ededed;*/
+		}
+		.qqts .top{
+			height: 100px;
+			background-color: #ffffff;
+			color: #333;
+		}
+		.qqts .top>ul>li:first-child{
+			/*list-style: none;*/
+			font-size: 24px;
+			margin-top: 50px;
+			float: left;
+		}
+		.qqts .top>ul>li:last-child{
+			float: right;
+		}
+		.qqts .top>ul>li>ul>li{
+			padding: 0 2em;
+			margin-top: 60px;
+			float: left;
+		}
+		.qqts .buttom{
+			height: 700px;
+			/*background-color: #ffffff;*/
+		}
+		.qqts .buttom>ul>li:nth-child(1){
+			width: 1200px;
+			height: 300px;
+			/*background-color: #ffffff;*/
+			/*border: 1px solid #ededed;*/
+		}
+		.qqts .buttom>ul>li:nth-child(2),.qqts .buttom>ul>li:nth-child(3),.qqts .buttom>ul>li:nth-child(4),.qqts .buttom>ul>li:nth-child(5){
+			margin-top: 20px;
+			margin-left: 5px;
+			float: left;
+		}
+		.qqts .buttom div>img{
+			width: 292.5px;
+			height: 320px;
+			background-color: #f4f4f4;
+
+		}
+		.qqts .buttom div>ul{
+			text-align: center;
+			line-height: 1.4em;
+			background-color: #ffffff;
+		}
+		/*甄选家样式*/
+		.zxj .wrapper{
+			height: 500px;
+			background-color: #ededed;
+		}
+		.zxj .top{
+			height: 100px;
+			background-color: #ffffff;
+			color: #333;
+		}
+		.zxj .top>ul>li{
+			float: left;
+		}
+		.zxj .top>ul>li:first-child{
+			font-size: 24px;
+			margin-top: 50px;
+		}
+		.zxj .top>ul>li:last-child{
+			padding: 0 2em;
+			margin-top: 60px;
+		}
+		/*.zxj .buttom>ul::after{
+			display: block;
+			content: "";
+			clear: both;
+		}*/
+		.zxj .buttom>ul>li{
+			float: left;
+		}
+		.zxj .buttom>ul>li:nth-child(1){
+			/*border: 1px solid #ededed;*/
+		}
+		.zxj .buttom>ul>li:nth-child(2){
+			margin-left: 10px;
+		}
+		.zxj .buttom>ul>li:nth-child(3){
+			margin-left: 10px;
+			margin-top: 10px;
+		}
+		/*大家都在说*/
+		.people{
+			background-color: #f4f0ea;
+		}
+		.people .wrapper{
+			height: 520px;
+			background-color: #f4f0ea;
+		}
+		.people .top{
+			height: 100px;
+			background-color: #f4f0ea;
+			color: #333;
+		}
+		.people .top>ul>li{
+			float: left;
+		}
+		.people .top>ul>li:first-child{
+			font-size: 24px;
+			margin-top: 50px;
+		}
+		.people .top>ul>li:last-child{
+			padding: 0 2em;
+			margin-top: 60px;
+		}
+		.people .buttom ul>li{
+			float: left;
+		}
+		.people .buttom ul>li:nth-child(2){
+			margin-left: 10px;
+		}
+		.people .buttom ul>li:nth-child(3){
+			margin-left: 10px;
+		}
+		.people .buttom div>img{
+			width: 390px;
+			height: 320px;
+		}
+		.people .buttom div>ul{
+			height: 100px;
+		}
+		/*相关信息*/
+		.xgxx .wrapper{
+			height: 200px;
+			background-color: #ededed;
+			margin-top: 50px;
+		}
+		.xgxx ul>li{
+			width: 390px;
+			height: 190px;
+			background-color: #ffffff;
+			float: left;
+			border: 5px solid #ededed;
+		}
+		/*底部*/
+		.footer{
+			margin-top: 20px;
+			height: 200px;
+			background-color: #414141;
+		}
+		.footer .top{
+			height: 96px;
+			/*background-color: #ffffff;*/
+			border-bottom: 2px solid #ededed;
+		}
+		.footer .buttom{
+			height: 96px;
+			/*background-color: #ffffff;*/
+			border-top: 2px solid #ededed;
+		}
+	</style>
+</head>
+<body>
+	<!-- 顶端 -->
+	<div class="top">
+	<!-- 容器居中，宽度1200px -->
+		<div class="wrapper">
+			<!-- 左边 -->
+			<div class="left">用浦发借记卡</div>
+			<!-- 右边 -->
+			<div class="right">
+				<ul>
+					<li><a href="">注册/登录</a></li>
+					<li><a href="">订单</a></li>
+					<li><a href="">会员</a></li>
+					<li><a href="">甄选家</a></li>
+					<li><a href="">企业采购</a></li>
+					<li><a href="">客户服务</a></li>
+					<li><a href="">APP</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- 顶端结束 -->
+
+	<!-- header -->
+	<div class="header">
+		<div class="wrapper">
+			<div class="left">
+				<img src="./images/logo.jpg">
+			</div>
+		<div class="right">
+		<!-- 搜索框 -->
+			<div class="search">
+				<ul >
+					<li>
+						<i>ss</i>
+						<input type="text" placeholder="一吸二扫三拖，扫拖一体机">
+					</li>
+					<li>搜索</li>
+				</ul>
+			</div>
+			<!-- 购物车 -->
+			<div class="buy">
+				<ul>
+					<li>
+						<i>ss</i>
+						<p>购物车</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+		</div>
+	</div>
+	<!-- header结束 -->
+
+	<!-- 导航栏 -->
+	<div class="nav">
+		<div class="wrapper">
+			<ul>
+				<li>首页</li>
+				<li>居家生活</li>
+				<li>服饰鞋包</li>
+				<li>美食酒水</li>
+				<li>个护清洁</li>
+				<li>母婴亲子</li>
+				<li>运动旅行</li>
+				<li>数码家电</li>
+				<li>全球特色</li>
+				<li>为你严选</li>
+				<li>众筹</li>
+			</ul>
+		</div>
+	</div>
+	<!-- 导航栏结束 -->
+
+	<!-- 宣传图 -->
+	<div class="xct">
+		<img src="./images/3aa54ecc49d78cdcc1749ffcd82da03f.jpg" width="100%" height="400px;">
+	</div>
+	<!-- 宣传图结束 -->
+
+	<!-- 品牌制造商 -->
+	<div class="ppmade">
+		<div class="wrapper">
+			<!-- 文字部分 -->
+			<div class="top">
+				<ul>
+					<li>
+						<p>品牌制造商</p>
+						<p>工厂直达消费者，剔除品牌溢价</p>
+					</li>
+					<li>
+						<p>更多制造商</p>
+					</li>
+				</ul>
+			</div>
+			<!-- 商品图片信息 -->
+			<div class="buttom">
+				<ul>
+					<li><img src="./images/74e2ea8f81004d0a60f90fc8e4649058.png" style="width:390px;height:350px"></li>
+					<li><img src="./images/c097be14110f769d58245cdad73e15c3.png" style="width:390px;height:350px"></li>
+					<li><img src="./images/2ef40536e86eba997dc17cab62697a44.png" style="width:390px;height:165px"></li>
+					<li><img src="./images/407ff2d67dd59e7701a83eb5f08f07b0.png" style="width:390px;height:165px"></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- 品牌制造商结束 -->
+
+	<!-- 新品首发 -->
+	<div class="xpshow">
+		<div class="wrapper">
+		<!-- 文字部分 -->
+			<div class="top">
+				<ul>
+					<li>
+						<p>新品首发</p>
+						<p>为你寻觅时间好物</p>
+					</li>
+					<li>
+						<p>更多新品</p>
+					</li>
+				</ul>
+			</div>
+			<!-- 商品图片信息 -->
+			<div class="buttom">
+				<ul>
+					<li>
+						<img src="./images/140f06e26c3737fd2f498a81cdacc1a4.png" width="300px">
+						<ul>
+							<li>特价</li>
+							<li>泰国红宝石 18K金爱心项链</li>
+							<li>
+								<p>￥2299</p>
+								<p>￥2599</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<img src="./images/8bf32abb64fabdfad8f9498a3199e91e.jpg" width="300px">
+						<ul>
+							<li>满赠</li>
+							<li>脚踏式双桶分类垃圾桶20L</li>
+							<li>￥198</li>
+						</ul>
+					</li>
+					<li>
+						<img src="./images/59bd6ae0307588f6eebf3848a4bd265f.png" width="300px">
+						<ul>
+							<li>家用除湿机</li>
+							<li>￥2788</li>
+						</ul>
+					</li>
+					<li>
+						<img src="./images/c0ad8ef6d7e71a2c90b2200ca8eb7780.png" width="300px">
+						<ul>
+							<li>好货内部价</li>
+							<li>韩国制造牙膏</li>
+							<li>￥29</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- 新品首发结束 -->
+
+	<!-- 人气推荐 -->
+
+	<div class="popular">
+		<div class="wrapper">
+		<!-- 文字部分 -->
+			<div class="top">
+				<ul>
+					<li>
+						<p>人气推荐</p>
+						<p>编辑推荐</p>
+						<p>热销总榜</p>
+					</li>
+					<li>
+						<p>更多推荐</p>
+					</li>
+				</ul>
+			</div>
+			<!-- 商品图片信息 -->
+			<div class="buttom">
+				<ul class="pic">
+					<li>
+						<div>
+							<img src="./images/7110ef3a50fa078f3ea904d9453a5588.png" width="400px" height="398px">
+						</div>
+						<div>
+							<ul>
+								<li>满折</li>
+								<li>护脊黄麻硬质薄床垫</li>
+								<li>￥1199</li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<div>
+							<img src="./images/75ce66f46c287cc512749f9e8328f0b3.png" width="250px" height="179px">
+						</div>
+						<div>
+							<ul>
+								<li>满折</li>
+								<li>护脊黄麻硬质薄床垫</li>
+								<li>￥1199</li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<div>
+							<img src="./images/951ecc96ffd33ddd680257c48d64a484.png" width="250px" height="179px">
+						</div>
+						<div>
+							<ul>
+								<li>满折</li>
+								<li>护脊黄麻硬质薄床垫</li>
+								<li>￥1199</li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<div>
+							<img src="./images/0e523f738da051506343dc6fd5d53c05.jpg" width="250px" height="179px">
+						</div>
+						<div>
+							<ul>
+								<li>满折</li>
+								<li>护脊黄麻硬质薄床垫</li>
+								<li>￥1199</li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<div>
+							<img src="./images/db035abf769ba273124774e9c16929a4.png" width="250px" height="179px">
+						</div>
+						<div>
+							<ul>
+								<li>满折</li>
+								<li>护脊黄麻硬质薄床垫</li>
+								<li>￥1199</li>
+							</ul>
+						</div> 
+					</li>
+					<li>
+						<div>
+							<img src="./images/509eb23abe3c1a096cbabc4a9682879c.png" width="250px" height="179px">
+						</div>
+						<div>
+							<ul>
+								<li>满折</li>
+								<li>护脊黄麻硬质薄床垫</li>
+								<li>￥1199</li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<div>
+							<img src="./images/35b4a3d98b38f979239ad5af0009b2c1.png" width="250px" height="179px">
+						</div>
+						<div>
+							<ul>
+								<li>满折</li>
+								<li>护脊黄麻硬质薄床垫</li>
+								<li>￥1199</li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- 人气推荐结束 -->
+	
+	<!-- 福利社 -->
+	<div class="fl">
+		<div class="wrapper">
+			<!-- 文字部分 -->
+			<div class="top">
+				<ul>
+					<li>福利社</li>
+					<li>查看全部福利</li>
+				</ul>
+			</div>
+			<!-- 商品图片 -->
+			<div class="buttom">
+				<ul>
+					<li>
+						<img src="./images/7abed5dae3e904cff7e0e5bea3ef1be4.jpg" width="298px" height="398px">
+					</li>
+					<li>
+						<img src="./images/1.png" width="598px;" height="400px">
+					</li>
+					<li>
+						<img src="./images/2.png" width="298px;" height="400px">
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- 福利社结束 -->
+	
+	<!-- 居家生活 -->
+	<div class="jjlive">
+		<div class="wrapper">
+		<!-- 文字部分 -->
+			<div class="top">
+				<ul>
+					<li>居家生活</li>
+					<li>
+						<ul>
+							<li>夏凉热卖</li>
+							<li>主题床品</li>
+							<li>北欧原木</li>
+							<li>餐厨系列</li>
+							<li>床品件套</li>
+							<li>被枕盖毯</li>
+							<li>床垫床褥</li>
+							<li>查看更多</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<!-- 商品图片信息 -->
+			<div class="buttom">
+				<ul>
+					<li>
+						<img src="./images/3467c8538d3a943eeba2365e3c497261.jpg" width="1200px" height="300px">
+					</li>
+					<li>
+						<div>
+							<img src="./images/7f187062e2af5b55ded338e635de227d.png">
+						</div>
+						<div>
+							<ul>
+								<li>新品</li>
+								<li>爹系男友.七夕礼包</li>
+								<li>￥521</li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<div>
+							<img src="./images/7f187062e2af5b55ded338e635de227d.png">
+						</div>
+						<div>
+							<ul>
+								<li>新品</li>
+								<li>爹系男友.七夕礼包</li>
+								<li>￥521</li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<div>
+							<img src="./images/7f187062e2af5b55ded338e635de227d.png">
+						</div>
+						<div>
+							<ul>
+								<li>新品</li>
+								<li>爹系男友.七夕礼包</li>
+								<li>￥521</li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<div>
+							<img src="./images/7f187062e2af5b55ded338e635de227d.png">
+						</div>
+						<div>
+							<ul>
+								<li>新品</li>
+								<li>爹系男友.七夕礼包</li>
+								<li>￥521</li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- 居家生活结束 -->
+	
+	<!-- 服饰鞋包 -->
+		<div class="shoes">
+		<div class="wrapper">
+		<!-- 文字部分 -->
+			<div class="top">
+				<ul>
+					<li>服饰鞋包</li>
+					<li>
+						<ul>
+							<li>人气爆款</li>
+							<li>好物上新</li>
+							<li>七夕好礼</li>
+							<li>男式T恤/POLO</li>
+							<li>男士衬衫</li>
+							<li>男士裤装</li>
+							<li>男士牛仔</li>
+							<li>查看更多</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<!-- 商品图片信息 -->
+			<div class="buttom">
+				<ul>
+					<li>
+						<img src="./images/5bf456c3af3be352de231f6001c2a711.jpg" width="1200px" height="300px">
+					</li>
+					<li>
+						<div>
+							<img src="./images/1ea83edde924aa22524cb399afadb823.png">
+						</div>
+						<div>
+							<ul>
+								<li>满折</li>
+								<li>女式小锁扣牛皮双拉链斜挎包</li>
+								<li>￥349</li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<div>
+							<img src="./images/1ea83edde924aa22524cb399afadb823.png">
+						</div>
+						<div>
+							<ul>
+								<li>满折</li>
+								<li>女式小锁扣牛皮双拉链斜挎包</li>
+								<li>￥349</li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<div>
+							<img src="./images/1ea83edde924aa22524cb399afadb823.png">
+						</div>
+						<div>
+							<ul>
+								<li>满折</li>
+								<li>女式小锁扣牛皮双拉链斜挎包</li>
+								<li>￥349</li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<div>
+							<img src="./images/1ea83edde924aa22524cb399afadb823.png">
+						</div>
+						<div>
+							<ul>
+								<li>满折</li>
+								<li>女式小锁扣牛皮双拉链斜挎包</li>
+								<li>￥349</li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- 服饰鞋包结束 -->
+	
+	<!-- 美食酒水 -->
+	<div class="food">
+		<div class="wrapper">
+		<!-- 文字部分 -->
+			<div class="top">
+				<ul>
+					<li>美食酒水</li>
+					<li>
+						<ul>
+							<li>中秋好礼</li>
+							<li>新品首发</li>
+							<li>好味精选</li>
+							<li>饼干糕点</li>
+							<li>小食糖巧</li>
+							<li>肉类零食</li>
+							<li>坚果炒货</li>
+							<li>查看更多</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<!-- 商品图片信息 -->
+			<div class="buttom">
+				<ul>
+					<li>
+						<img src="./images/3fac52e647381d2f18ed22733ff45bae.jpg" width="1200px" height="300px">
+					</li>
+					<li>
+						<div>
+							<img src="./images/1c1940bce1d9f3bfef4aa0e3570ecbf3.jpg">
+						</div>
+						<div>
+							<ul>
+								<li>新品 特价</li>
+								<li>茗月 月饼礼盒 50克*12枚</li>
+								<li>￥308</li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<div>
+							<img src="./images/1c1940bce1d9f3bfef4aa0e3570ecbf3.jpg">
+						</div>
+						<div>
+							<ul>
+								<li>新品 特价</li>
+								<li>茗月 月饼礼盒 50克*12枚</li>
+								<li>￥308</li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<div>
+							<img src="./images/1c1940bce1d9f3bfef4aa0e3570ecbf3.jpg">
+						</div>
+						<div>
+							<ul>
+								<li>新品 特价</li>
+								<li>茗月 月饼礼盒 50克*12枚</li>
+								<li>￥308</li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<div>
+							<img src="./images/1c1940bce1d9f3bfef4aa0e3570ecbf3.jpg">
+						</div>
+						<div>
+							<ul>
+								<li>新品 特价</li>
+								<li>茗月 月饼礼盒 50克*12枚</li>
+								<li>￥308</li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- 美食酒水结束 -->
+	
+	<!-- 个护清洁 -->
+	<div class="clear">
+		<div class="wrapper">
+		<!-- 文字部分 -->
+			<div class="top">
+				<ul>
+					<li>个护清洁</li>
+					<li>
+						<ul>
+							<li>爆款榜单</li>
+							<li>新品尝鲜</li>
+							<li>基础护肤</li>
+							<li>卸妆洁面</li>
+							<li>护肤工具</li>
+							<li>洗发护发</li>
+							<li>身体护理</li>
+							<li>查看更多</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<!-- 商品图片信息 -->
+			<div class="buttom">
+				<ul>
+					<li>
+						<img src="./images/04afc6fe1cf773ab0edd8401d90d9c74.jpg" width="1200px" height="300px">
+					</li>
+					<li>
+						<div>
+							<img src="./images/6355a528c74677d2cbd51161af3aedfe.png">
+						</div>
+						<div>
+							<ul>
+								<li>新品</li>
+								<li>【七夕】春风佳期如梦套套礼袋</li>
+								<li>￥139</li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<div>
+							<img src="./images/6355a528c74677d2cbd51161af3aedfe.png">
+						</div>
+						<div>
+							<ul>
+								<li>新品</li>
+								<li>【七夕】春风佳期如梦套套礼袋</li>
+								<li>￥139</li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<div>
+							<img src="./images/6355a528c74677d2cbd51161af3aedfe.png">
+						</div>
+						<div>
+							<ul>
+								<li>新品</li>
+								<li>【七夕】春风佳期如梦套套礼袋</li>
+								<li>￥139</li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<div>
+							<img src="./images/6355a528c74677d2cbd51161af3aedfe.png">
+						</div>
+						<div>
+							<ul>
+								<li>新品</li>
+								<li>【七夕】春风佳期如梦套套礼袋</li>
+								<li>￥139</li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- 个护清洁结束 -->
+	
+	<!-- 母婴亲子 -->
+	<div class="baby">
+		<div class="wrapper">
+		<!-- 文字部分 -->
+			<div class="top">
+				<ul>
+					<li>母婴亲子</li>
+					<li>
+						<ul>
+							<li>必买好货</li>
+							<li>五折封顶</li>
+							<li>囤货精选</li>
+							<li>开学好物</li>
+							<li>七夕有礼</li>
+							<li>初秋精选</li>
+							<li>上衣</li>
+							<li>查看更多</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<!-- 商品图片信息 -->
+			<div class="buttom">
+				<ul>
+					<li>
+						<img src="./images/67394bf3831a02d891be60f5095fbd21.jpg" width="1200px" height="300px">
+					</li>
+					<li>
+						<div>
+							<img src="./images/f444ac11115a8249a92dc95dccad6e07.png">
+						</div>
+						<div>
+							<ul>
+								<li>满折</li>
+								<li>超薄婴儿纸尿裤 S码（38）片*1包</li>
+								<li>￥69</li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<div>
+							<img src="./images/f444ac11115a8249a92dc95dccad6e07.png">
+						</div>
+						<div>
+							<ul>
+								<li>满折</li>
+								<li>超薄婴儿纸尿裤 S码（38）片*1包</li>
+								<li>￥69</li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<div>
+							<img src="./images/f444ac11115a8249a92dc95dccad6e07.png">
+						</div>
+						<div>
+							<ul>
+								<li>满折</li>
+								<li>超薄婴儿纸尿裤 S码（38）片*1包</li>
+								<li>￥69</li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<div>
+							<img src="./images/f444ac11115a8249a92dc95dccad6e07.png">
+						</div>
+						<div>
+							<ul>
+								<li>满折</li>
+								<li>超薄婴儿纸尿裤 S码（38）片*1包</li>
+								<li>￥69</li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- 母婴亲子结束 -->
+	
+	<!-- 运动旅行 -->
+	<div class="sport">
+		<div class="wrapper">
+		<!-- 文字部分 -->
+			<div class="top">
+				<ul>
+					<li>运动旅行</li>
+					<li>
+						<ul>
+							<li>Yessing</li>
+							<li>夏季清凉防晒</li>
+							<li>瑜伽系列</li>
+							<li>出行好物</li>
+							<li>男式运动T恤</li>
+							<li>男式运动外套/卫衣</li>
+							<li>男式运动裤装</li>
+							<li>查看更多</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<!-- 商品图片信息 -->
+			<div class="buttom">
+				<ul>
+					<li>
+						<img src="./images/9deb50ed1c8f376c8194926ffb98581f.jpg" width="1200px" height="300px">
+					</li>
+					<li>
+						<div>
+							<img src="./images/35dcfb65d0c065902c404e429ab7fb36.png">
+						</div>
+						<div>
+							<ul>
+								<li>超值价</li>
+								<li>男式无缝休闲运动T恤</li>
+								<li>￥49.9</li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<div>
+							<img src="./images/35dcfb65d0c065902c404e429ab7fb36.png">
+						</div>
+						<div>
+							<ul>
+								<li>超值价</li>
+								<li>男式无缝休闲运动T恤</li>
+								<li>￥49.9</li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<div>
+							<img src="./images/35dcfb65d0c065902c404e429ab7fb36.png">
+						</div>
+						<div>
+							<ul>
+								<li>超值价</li>
+								<li>男式无缝休闲运动T恤</li>
+								<li>￥49.9</li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<div>
+							<img src="./images/35dcfb65d0c065902c404e429ab7fb36.png">
+						</div>
+						<div>
+							<ul>
+								<li>超值价</li>
+								<li>男式无缝休闲运动T恤</li>
+								<li>￥49.9</li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- 运动旅行结束 -->
+	
+	<!-- 数码家电 -->
+	<div class="smjd">
+		<div class="wrapper">
+		<!-- 文字部分 -->
+			<div class="top">
+				<ul>
+					<li>数码家电</li>
+					<li>
+						<ul>
+							<li>夏季热卖</li>
+							<li>甄选爆款</li>
+							<li>颜值好物</li>
+							<li>口腔护理</li>
+							<li>身体护理</li>
+							<li>面部护理</li>
+							<li>头发护理</li>
+							<li>查看更多</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<!-- 商品图片信息 -->
+			<div class="buttom">
+				<ul>
+					<li>
+						<img src="./images/0179ff7afcc481d09a9c74e65d149f8e.jpg" width="1200px" height="300px">
+					</li>
+					<li>
+						<div>
+							<img src="./images/cecf716b41f9ec89ab058d41da9ece5b.png">
+						</div>
+						<div>
+							<ul>
+								<li>满赠</li>
+								<li>网易智造强劲交流风扇</li>
+								<li>￥199</li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<div>
+							<img src="./images/cecf716b41f9ec89ab058d41da9ece5b.png">
+						</div>
+						<div>
+							<ul>
+								<li>满赠</li>
+								<li>网易智造强劲交流风扇</li>
+								<li>￥199</li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<div>
+							<img src="./images/cecf716b41f9ec89ab058d41da9ece5b.png">
+						</div>
+						<div>
+							<ul>
+								<li>满赠</li>
+								<li>网易智造强劲交流风扇</li>
+								<li>￥199</li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<div>
+							<img src="./images/cecf716b41f9ec89ab058d41da9ece5b.png">
+						</div>
+						<div>
+							<ul>
+								<li>满赠</li>
+								<li>网易智造强劲交流风扇</li>
+								<li>￥199</li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- 数码家电结束 -->
+	
+	<!-- 全球特色 -->
+	<div class="qqts">
+		<div class="wrapper">
+		<!-- 文字部分 -->
+			<div class="top">
+				<ul>
+					<li>全球特色</li>
+					<li>
+						<ul>
+							<li>七夕上新</li>
+							<li>当季星品</li>
+							<li>好评推荐</li>
+							<li>礼品点卡</li>
+							<li>礼盒</li>
+							<li>床品家纺</li>
+							<li>餐厨用品</li>
+							<li>查看更多</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<!-- 商品图片信息 -->
+			<div class="buttom">
+				<ul>
+					<li>
+						<img src="./images/0c3773b8042ad3ae3bb45586dbffec0c.jpg" width="1200px" height="300px">
+					</li>
+					<li>
+						<div>
+							<img src="./images/8fc54f638b8e9e0f871594738ceb5180.png">
+						</div>
+						<div>
+							<ul>
+								<li>新品</li>
+								<li>茶隔保温杯 玉藻前 阴阳师</li>
+								<li>￥108</li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<div>
+							<img src="./images/8fc54f638b8e9e0f871594738ceb5180.png">
+						</div>
+						<div>
+							<ul>
+								<li>新品</li>
+								<li>茶隔保温杯 玉藻前 阴阳师</li>
+								<li>￥108</li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<div>
+							<img src="./images/8fc54f638b8e9e0f871594738ceb5180.png">
+						</div>
+						<div>
+							<ul>
+								<li>新品</li>
+								<li>茶隔保温杯 玉藻前 阴阳师</li>
+								<li>￥108</li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<div>
+							<img src="./images/8fc54f638b8e9e0f871594738ceb5180.png">
+						</div>
+						<div>
+							<ul>
+								<li>新品</li>
+								<li>茶隔保温杯 玉藻前 阴阳师</li>
+								<li>￥108</li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- 全球特色结束 -->
+	
+	<!-- 甄选家 -->
+	<div class="zxj">
+		<div class="wrapper">
+			<!-- 文字部分 -->
+			<div class="top">
+				<ul>
+					<li>甄选家</li>
+					<li>我们在寻找，对生活有态度的你</li>
+				</ul>
+			</div>
+			<!-- 商品图片信息 -->
+			<div class="buttom">
+				<ul>
+					<li>
+						<img src="./images/b21b20f34d5007f961c182273a5d429f.jpg" width="790px" height="400px">
+					</li>
+					<li>
+						<img src="./images/9548e1f1a0ba0436cb13d586c50284be.jpg" width="400px" height="195px">
+					</li>
+					<li>
+						<img src="./images/4a56bf536141eb2ad84f8f8f0e0418ab.jpg" width="400px" height="195px">
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- 甄选家结束 -->
+	
+	<!-- 大家都再说 -->
+	<div class="people">
+		<div class="wrapper">
+			<!-- 文字部分 -->
+			<div class="top">
+				<ul>
+					<li>大家都再说</li>
+					<li>生活没有统一标准</li>
+				</ul>
+			</div>
+			<!-- 商品图片信息 -->
+			<div class="buttom">
+				<ul>
+					<li>
+						<div>
+							<img src="./images/58a71d3d27828cc365ded68dcf18cf5e.jpg">
+						</div>
+						<div>
+							<ul>
+								<li>1****y
+								 2019-08-05 12:00</li>
+								<li>红油面皮 87克*6杯</li>
+								<li>物美价廉</li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<div>
+							<img src="./images/58a71d3d27828cc365ded68dcf18cf5e.jpg">
+						</div>
+						<div>
+							<ul>
+								<li>1****y
+								 2019-08-05 12:00</li>
+								<li>红油面皮 87克*6杯</li>
+								<li>物美价廉</li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<div>
+							<img src="./images/58a71d3d27828cc365ded68dcf18cf5e.jpg">
+						</div>
+						<div>
+							<ul>
+								<li>1****y
+								 2019-08-05 12:00</li>
+								<li>红油面皮 87克*6杯</li>
+								<li>物美价廉</li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- 大家都再说结束 -->
+	
+	<!-- 相关信息 -->
+	<div class="xgxx">
+		<div class="wrapper">
+			<ul>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+	</div>
+	<!-- 相关信息结束 -->
+	
+	<!-- 底部 -->
+	<div class="footer">
+		<div class="top"></div>
+		<div class="buttom"></div>
+	</div>
+	<!-- 底部结束 -->
+</body>
+</html>
